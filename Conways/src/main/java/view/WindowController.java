@@ -16,8 +16,8 @@ import java.io.*;
 
 /*
 public class WindowController;
-This class controls the main GUI for the application. The ConwayGUI.FXML file defines the fxID every GUI
-components as well as the reference (fxID) for all GUI components that are required by this class to
+This class controls the main GUI for the application. The ConwayGUI.FXML file defines the fxID for every GUI
+component as well as the reference (fxID) for all GUI components that are required by this class to
 function and access is exported from the FXML to the package through declaration in the module-info.java.
  */
 public class WindowController {
@@ -134,9 +134,9 @@ public class WindowController {
         cycles.setText("" + _cycleCount);
         int rows = map.length;
         int cols = map[0].length;
-        int spacingH = HORIZONTAL_LABEL_DIFFERENCE * PIXEL_SIZE + ((MAX_COLS - cols) * PIXEL_SIZE)/2;
+        System.out.println(rows + " " + cols);
+        int spacingH = HORIZONTAL_LABEL_DIFFERENCE * PIXEL_SIZE + ((MAX_ROWS - cols) * PIXEL_SIZE)/2;
         int spacingV = ((MAX_ROWS - rows) * PIXEL_SIZE) / 2;
-        int var = 4;
         _map = map;
         _lbls = new Label[rows][cols];
         Window.getChildren().clear();

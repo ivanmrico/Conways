@@ -13,12 +13,14 @@ public enum Version {
      */
 
     // The HEADER is used to head the file with basic information. Version number needs to be updated.
-    HEADER("Conway's Game Of Life\nby Ivan M. Rico\nVersion 1.0.6 \n\n"),
+    HEADER("Conway's Game Of Life\nby Ivan M. Rico\nVersion 1.0.7 \n\n"),
 
     // The SIGNATURE is used in the about section of the application. It does not need to be modified.
     SIGNATURE("Dedicated to my children, family and friends. Thanks for your love and support.\n\nSee the version.txt file in this directory for more information about Version History.\n\n"),
 
     // New version information is added here.
+
+    VERSION_1_0_7("Version 1.0.7\n" + "Fixed an issue where maps were not loading correctly.\n\n"),
     VERSION_1_0_6("Version 1.0.6\n" + "Improved performance on startup.\n" + "Fixed an issue with maps not displaying correctly.\n" + "Fixed an issue where incorrect cells were toggled when clicked if the map had a different number of rows versus cols.\n\n"),
     VERSION_1_0_5("Version 1.0.5\n" + "Cleaned code and added comments in preparation for first GitHub upload.\n\n"),
     VERSION_1_0_4("Version 1.0.4\n" + "Fixed an issue where save and load dialogs would go to the home directory rather than the current directory.\n\n"),
@@ -28,16 +30,15 @@ public enum Version {
     VERSION_1_0_0("Version 1.0.0 \n" + "Featuring speed control, size control, cycle control, saving/loading, clickable cell status and more.\n\n"),
 
 
-
     // CURRENT_VERSION is used for the VERSION_HISTORY and uses the HEADER and the most recent version.
-    CURRENT_VERSION(HEADER.getText() +  VERSION_1_0_6.getText()),
+    CURRENT_VERSION(HEADER.getText() +  VERSION_1_0_7.getText()),
 
     // ABOUT is used in the ABOUT section of the application. It uses the HEADER, SIGNATURE and most recent version.
     ABOUT(CURRENT_VERSION.getText() + SIGNATURE.getText()),
 
     // VERSION_HISTORY is used to generate the version.txt file when the application loads.
     VERSION_HISTORY(CURRENT_VERSION.getText()
-            + VERSION_1_0_5.getText() + VERSION_1_0_4.getText()
+            + VERSION_1_0_6.getText() + VERSION_1_0_5.getText() + VERSION_1_0_4.getText()
             + VERSION_1_0_3.getText() + VERSION_1_0_2.getText() + VERSION_1_0_1.getText() + VERSION_1_0_0.getText());
 
     /*

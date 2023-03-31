@@ -73,7 +73,7 @@ public class FileManager {
         reader.close();
 
         rowCount = lst.size();
-        colCount = lst.get(0).length() - 1;
+        colCount = lst.get(0).length();
         int[][] result = new int[rowCount][colCount];
         int ind = 0;
         int subInd = 0;

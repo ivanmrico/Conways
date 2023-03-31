@@ -1,6 +1,9 @@
 Conway's Game Of Life
 by Ivan M. Rico
-Version 1.0.6 
+Version 1.0.7 
+
+Version 1.0.7
+Fixed an issue where maps were not loading correctly.
 
 Version 1.0.6
 Improved performance on startup.
