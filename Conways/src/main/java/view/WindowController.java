@@ -458,8 +458,8 @@ public class WindowController {
     This method prevents Version History text file from populating if it already exists and matches
     the current version.
      */
-    private void verifyVersionText(){
-
+    private boolean verifyVersionText(){
+        return false;
     }
 
 }
