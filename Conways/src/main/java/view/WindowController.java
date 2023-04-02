@@ -262,7 +262,7 @@ public class WindowController {
     @FXML
     private void about(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION, Version.ABOUT.getText(), ButtonType.OK);
-        alert.setTitle("Conway's Game of Life by: Ivan Rico V 1.00");
+        alert.setTitle(Version.HEADER.getText());
         alert.setHeaderText(null);
         alert.showAndWait();
     }

@@ -4,7 +4,9 @@ Version 1.0.8
 
 Version 1.0.8 
 4.1.23
-Version history now includes dates and fixed some minor formatting issues in the version history.
+Version history now includes dates
+Fixed some minor formatting issues in the version history.
+Fixed a minor issue with the about dialog box displaying the title incorrectly.
 
 Version 1.0.7
 4.1.23

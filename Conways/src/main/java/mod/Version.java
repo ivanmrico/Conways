@@ -19,7 +19,7 @@ public enum Version {
     SIGNATURE("Dedicated to my children, family and friends. Thanks for your love and support.\n\nSee the version.txt file in this directory for more information about Version History.\n\n"),
 
     // New version information is added here.
-    VERSION_1_0_8("Version 1.0.8 \n" + "4.1.23\n" + "Version history now includes dates and fixed some minor formatting issues in the version history.\n\n"),
+    VERSION_1_0_8("Version 1.0.8 \n" + "4.1.23\n" + "Version history now includes dates\n" +  "Fixed some minor formatting issues in the version history.\n" + "Fixed a minor issue with the about dialog box displaying the title incorrectly.\n\n"),
     VERSION_1_0_7("Version 1.0.7\n" + "4.1.23\n" + "Fixed an issue where maps were not loading correctly.\n\n"),
     VERSION_1_0_6("Version 1.0.6\n" + "4.1.23\n" +  "Improved performance on startup.\n" + "Fixed an issue with maps not displaying correctly.\n" + "Fixed an issue where incorrect cells were toggled when clicked if the map had a different number of rows versus cols.\n\n"),
     VERSION_1_0_5("Version 1.0.5\n" + "4.1.23\n" +  "Cleaned code and added comments in preparation for first GitHub upload.\n\n"),
