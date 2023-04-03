@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<SplitPane fx:id="mainwin" dividerPositions="0.8655778894472361" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="620.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.WindowController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="624.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Pane fx:id="Window" layoutY="-3.0" prefHeight="532.0" prefWidth="612.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="598.0">
+         <children>
+            <Button fx:id="repop" layoutX="495.0" layoutY="29.0" mnemonicParsing="false" onAction="#rePopulate" text="Repopulate" />
+            <Label layoutX="28.0" layoutY="12.0" prefHeight="17.0" prefWidth="44.0" text="Cycles:" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="sizeTxt" layoutX="207.0" layoutY="30.0" prefHeight="26.0" prefWidth="34.0" promptText="25" />
+            <Label fx:id="cycles" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="36.0" prefHeight="17.0" prefWidth="80.0" text="0" />
+            <Label layoutX="187.0" layoutY="11.0" text="Size (max 40):" />
+            <Label layoutX="303.0" layoutY="11.0" text="Run Cycles:" />
+            <TextField fx:id="cycText" layoutX="272.0" layoutY="30.0" prefHeight="26.0" prefWidth="136.0" />
+            <Button fx:id="start" layoutX="425.0" layoutY="29.0" mnemonicParsing="false" onAction="#start" text="Start" />
+            <Label layoutX="109.0" layoutY="11.0" text="Speed (ms):" />
+            <TextField fx:id="speedTxt" layoutX="115.0" layoutY="31.0" prefHeight="26.0" prefWidth="54.0" promptText="100" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
