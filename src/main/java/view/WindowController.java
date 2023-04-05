@@ -98,13 +98,13 @@ public class WindowController {
     private TextField cycText;
 
     /*
-    public void rePopulate();
+    private void rePopulate();
     This method is used to repopulate the map to the specified size with random status for each cell when the
     Randomize button is clicked. Also resets the cycle counter and total and updates the GUI with the
     new map.
      */
     @FXML
-    public void rePopulate(){
+    private void rePopulate(){
         _cycleCount = 0;
         _cycleTotal = 0;
         cycles.setText("" + _cycleCount);
@@ -137,17 +137,16 @@ public class WindowController {
     }
 
     /*
-    public void loadMap(int[][] map);
+    private void loadMap(int[][] map);
     Method used to load a map from a file. Updates the GUI based on the map supplied to the parameter.
     Used in conjunction with the load method.
      */
-    public void loadMap(int[][] map){
+    private void loadMap(int[][] map){
         _cycleCount = 0;
         _cycleTotal = 0;
         cycles.setText("" + _cycleCount);
         int rows = map.length;
         int cols = map[0].length;
-        System.out.println(rows + " " + cols);
         int spacingH = HORIZONTAL_LABEL_DIFFERENCE * PIXEL_SIZE + ((MAX_ROWS - cols) * PIXEL_SIZE)/2;
         int spacingV = ((MAX_ROWS - rows) * PIXEL_SIZE) / 2;
         _map = map;
@@ -174,29 +173,30 @@ public class WindowController {
     }
 
     /*
-    public void save() throws IOException;
+    private void save() throws IOException;
     Method used to save the current map as a .cnw file when the save button is clicked. The method
     calls upon the FileManager class to handle the dialog prompt to save and allows the user to choose
     the file location and name.
      */
     @FXML
-    public void save() throws IOException {
+    private void save() throws IOException {
         FileManager.saveMap(_map, mainwin);
     }
 
     /*
-    public void load() throws IOException;
+    private void load() throws IOException;
     Method used to load a map from a file when the "Load" button is clicked. The Method uses the
     FileManager class to get the Name of the file and the data stored in the file and then updates
     the GUI to represent the chosen map.
      */
     @FXML
-    public void load() throws IOException {
+    private void load() throws IOException {
         mainwin.setDisable(true);
         String fileName = FileManager.getFileName();
         try {
             _map = FileManager.getFileData(fileName);
         } catch (IOException e) {
+            mainwin.setDisable(false);
             throw new RuntimeException(e);
         }
         mainwin.setDisable(false);
@@ -204,12 +204,12 @@ public class WindowController {
     }
 
     /*
-    public void clear();
+    private void clear();
     Method used to kill all the cells in the current map. Useful for creating specific Conway's
     patterns (for example: a glider).
      */
     @FXML
-    public void clear(){
+    private void clear(){
 
         for(int row = 0; row < _map.length; row++){
             for(int col = 0;  col < _map[0].length; col++){
@@ -221,12 +221,12 @@ public class WindowController {
     }
 
     /*
-    public void fill();
+    private void fill();
     Method used to bring to life all of the cells in the current map when the "Fill" button is clicked.
     Useful creating unique designs and maps.
      */
     @FXML
-    public void fill(){
+    private void fill(){
         for(int row = 0; row < _map.length; row++){
             for(int col = 0;  col < _map[0].length; col++){
                 _map[row][col] = 1;
@@ -286,13 +286,13 @@ public class WindowController {
     }
 
     /*
-    orivate void tutorial();
+    private void tutorial();
     Sends an alert to the user to explain how the program works.
      */
     @FXML
     private void tutorial(){
         mainwin.setDisable(true);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Cycles -> Current cycle. Each cycle cell status will change (alive or dead) based on Conway's rules. \n\n Speed -> Set the speed of each cycle. Speed is determined when Start is pressed. \n\n Rows, Cols -> Set the number of rows/cols in the map. Rows/cols set when Randomize is pressed. Max Rows are 53 and Cols are 61. \n\n Randomize -> Repopulates the map with random cell status with a size of rows/cols. Defaults are 53 and 61 respectively. \n\n Fill -> Convert all cells status to alive. \n\n Clear -> Convert all cells status to dead. \n\n Run Cycles: Set a stopping point to a specified amount of cycles. The default is -1 for infiinite cycles \n\n Save -> Save your map as a .cnw file. \n\n Load -> Load a map from a . cnw file. \n\n ? -> Tutorial. \n\n ... -> About the program and Version number. ", ButtonType.OK);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Cycles -> Current cycle. Each cycle cell status will change (alive or dead) based on Conway's rules. \n\n Speed -> Set the speed of each cycle. Speed is determined when Start is pressed. \n\n Start -> Updates cells' state and cycles run as fast as the designated speed and according to the rules of Conway's Game of Life and changes into the Stop button\n\n Stop -> Stops the Conway's map from updating and turns into the Start button. \n\n Rows, Cols -> Set the number of rows/cols in the map. Rows/cols set when Randomize is pressed. Max Rows are 53 and Cols are 61. \n\n Randomize -> Repopulates the map with random cell status with a size of rows/cols. Defaults are 53 and 61 respectively. \n\n Fill -> Convert all cells status to alive. \n\n Clear -> Convert all cells status to dead. \n\n Run Cycles -> Set a stopping point to a specified amount of cycles. The default is -1 for infiinite cycles \n\n Save -> Save your map as a .cnw file. \n\n Load -> Load a map from a . cnw file. \n\n ? -> Tutorial. \n\n ... -> About the program and Version number. ", ButtonType.OK);
         alert.setTitle("Message");
         alert.setHeaderText(null);
         alert.showAndWait();
@@ -300,7 +300,7 @@ public class WindowController {
     }
 
     /*
-    getSpeed();
+    private int getSpeed();
     Gets the speed listed in the speed text field. Used whenever the start button is pressed.
      */
     private int getSpeed(){
@@ -375,14 +375,14 @@ public class WindowController {
     }
 
     /*
-    public void initialize();
+    private void initialize();
     Whenever the program is started, creates the Version History text file in the current directory,
     locks the divider on the split pane so the panes can't be resized and randomizes a conway map
     with the default specifications and sets a mouse click event to change the status of a cell
     whenever the cell is clicked based on the location of the click.
      */
     @FXML
-    public void initialize() throws IOException {
+    private void initialize() throws IOException {
        if(!FileManager.verifyVersionText()){
             createVersionText(Version.VERSION_HISTORY.getText());
             System.out.println("Version history created.");
@@ -397,11 +397,11 @@ public class WindowController {
     }
 
     /*
-    public void setImage();
+    private void setImage();
     Method to change the images based on the _map. Used to update the GUI to reflect living and
     dead cells after each cycle according to Conway's rules.
     */
-    public void setImage(){
+    private void setImage(){
         Conway obj = new Conway(_map);
         _map = obj.updateMap();
         cycles.setText("" + (++_cycleCount + _cycleTotal));
@@ -424,11 +424,11 @@ public class WindowController {
     }
 
     /*
-    public void SetImage(double x, double y);
+    private void SetImage(double x, double y);
     Overloaded method. Called whenever a cell is clicked. Uses the location of the click to find the
     matching cell and change it's status to the opposite status.
      */
-    public void setImage(double x, double y){
+    private void setImage(double x, double y){
         int rowSize = _lbls.length;
         int colSize = _lbls[0].length;
         int spacingH = HORIZONTAL_LABEL_DIFFERENCE * PIXEL_SIZE + ((MAX_ROWS - colSize) * PIXEL_SIZE)/2;

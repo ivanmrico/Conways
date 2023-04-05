@@ -140,6 +140,7 @@ public class FileManager {
         } catch (Exception e) {
             // Handle the exception here
             e.printStackTrace();
+            mainwin.setDisable(false);
         }
         mainwin.setDisable(false);
         return false;

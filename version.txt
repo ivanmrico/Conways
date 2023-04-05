@@ -1,6 +1,13 @@
 Conway's Game Of Life
 by Ivan M. Rico
-*Version 1.0.11*
+*Version 1.0.12*
+
+Version 1.0.12
+4.5.23
+Fixed an issue where exiting the save/load dialog without selecting a file would cause the program to become unusable.
+Slightly improved code performance.
+Fixed an issue where some features in the tutorial were overlooked.
+Fixed a grammar issue in the tutorial.
 
 Version 1.0.11
 4.4.23

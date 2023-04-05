@@ -13,13 +13,14 @@ public enum Version {
      */
 
     // The HEADER is used to head the file with basic information. Version number needs to be updated.
-    CURRENT_VERSION("*Version 1.0.11*"),
+    CURRENT_VERSION("*Version 1.0.12*"),
     HEADER("Conway's Game Of Life\nby Ivan M. Rico\n" + CURRENT_VERSION.getText() + "\n\n"),
 
     // The SIGNATURE is used in the about section of the application. It does not need to be modified.
     SIGNATURE("Dedicated to my children, family and friends. Thanks for your love and support.\n\nSee the version.txt file in this directory for more information about Version History.\n\n"),
 
     // New version information is added here.
+    VERSION_1_0_12("Version 1.0.12\n" + "4.5.23\n" + "Fixed an issue where exiting the save/load dialog without selecting a file would cause the program to become unusable.\n" + "Slightly improved code performance.\n" + "Fixed an issue where some features in the tutorial were overlooked.\n" + "Fixed a grammar issue in the tutorial.\n\n"),
     VERSION_1_0_11("Version 1.0.11\n" + "4.4.23\n" + "Added a feature in the code that made it easier to update the version history text file.\n" + "Fixed an issue where version history text file would generate even if it already correctly exists.\n" + "Fixed an issue that improperly generated version history text file.\n\n"),
     VERSION_1_0_10("Version 1.0.10\n" + "4.3.23\n" + "Fixed an issue that allowed buttons to be pressed while a map was running.\n" + "Fixed an issue that allowed text to be edited while a map was running.\n\n"),
     VERSION_1_0_9("Version 1.0.9\n" + "4.2.23\n" + "Fixed an issue where maps could run and be altered while a dialog was opened.\n" + "Fixed an issue where past versions were displaying the incorrect dates.\n" + "Known Issues: The save and load dialogs are not always on top of the main GUI.\n\n"),
@@ -35,14 +36,14 @@ public enum Version {
 
 
     // CURRENT_VERSION is used for the VERSION_HISTORY and uses the HEADER and the most recent version.
-    CURRENT_VERSION_INFO(HEADER.getText() +  VERSION_1_0_11.getText()),
+    CURRENT_VERSION_INFO(HEADER.getText() +  VERSION_1_0_12.getText()),
 
     // ABOUT is used in the ABOUT section of the application. It uses the HEADER, SIGNATURE and most recent version.
     ABOUT(CURRENT_VERSION_INFO.getText() + SIGNATURE.getText()),
 
     // VERSION_HISTORY is used to generate the version.txt file when the application loads.
     VERSION_HISTORY(CURRENT_VERSION_INFO.getText()
-            + VERSION_1_0_10.getText() + VERSION_1_0_9.getText() + VERSION_1_0_8.getText()
+            + VERSION_1_0_11.getText() + VERSION_1_0_10.getText() + VERSION_1_0_9.getText() + VERSION_1_0_8.getText()
             + VERSION_1_0_7.getText() + VERSION_1_0_6.getText() + VERSION_1_0_5.getText() + VERSION_1_0_4.getText()
             + VERSION_1_0_3.getText() + VERSION_1_0_2.getText() + VERSION_1_0_1.getText() + VERSION_1_0_0.getText());
 
