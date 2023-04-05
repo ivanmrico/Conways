@@ -173,4 +173,49 @@ public class FileManager {
         ret += "$";
         return ret;
     }
+
+    /*
+    public static boolean verifyVersionText() throws IOException();
+    This method is used to verify the version history text file to see if it exists, is incompatible with the
+    version of the program. If it exits the file will not be generated. If it is incompatible
+    the file will be overridden. If it does not exist it will be generated.
+     */
+    public static boolean verifyVersionText() throws IOException {
+        File file = new File("version.txt");
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+        }
+        catch(Exception e){
+            System.out.println("Version history not found.");
+            return false;
+        }
+
+        String line;
+        String build = "";
+        while ((line = reader.readLine()) != null) {
+            for(int i = 0; i < line.length(); i++){
+                char c = line.charAt(i);
+                if(c == '*'){
+                    build += c;
+                    for(int j = 1; j < line.length(); j++){
+                        char c2 = line.charAt(j);
+                        build += c2;
+                    }
+                    if(build.equals(Version.CURRENT_VERSION.getText())){
+                        System.out.println("Version history up to date.");
+                        reader.close();
+                        return true;
+                    }
+                    else{
+                        System.out.println("Version history incompatible");
+                        reader.close();
+                        return false;
+                    }
+                }
+
+            }
+        }
+        return false;
+    }
 }

@@ -382,8 +382,11 @@ public class WindowController {
     whenever the cell is clicked based on the location of the click.
      */
     @FXML
-    public void initialize(){
-        createVersionText(Version.VERSION_HISTORY.getText());
+    public void initialize() throws IOException {
+       if(!FileManager.verifyVersionText()){
+            createVersionText(Version.VERSION_HISTORY.getText());
+            System.out.println("Version history created.");
+        }
         speedTxt.setText("100");
         cycText.setText("-1");
         rowTxt.setText("53");
@@ -473,14 +476,7 @@ public class WindowController {
         }
     }
 
-    /*
-    private void verifyVersionText();
-    This method prevents Version History text file from populating if it already exists and matches
-    the current version.
-     */
-    private boolean verifyVersionText(){
-        return false;
-    }
+
     /*
     private void buttonsEnabler(boolean on);
     This method toggles enables/disables all buttons that should not function when a map is running
@@ -496,6 +492,11 @@ public class WindowController {
         tutorial.setDisable(off);
     }
 
+    /*
+    private void buttonsEnabler(boolean on);
+    This method toggles enables/disables all text fields that should not function when a map is running
+    (disables after the user has clicked on the Start button and enables when they click Stop).
+    */
     private void textsDisabler(boolean off){
         speedTxt.setDisable(off);
         rowTxt.setDisable(off);

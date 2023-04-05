@@ -1,16 +1,23 @@
 Conway's Game Of Life
 by Ivan M. Rico
-Version 1.0.10 
+*Version 1.0.11*
+
+Version 1.0.11
+4.4.23
+Added a feature in the code that made it easier to update the version history text file.
+Fixed an issue where version history text file would generate even if it already correctly exists.
+Fixed an issue that improperly generated version history text file.
 
 Version 1.0.10
 4.3.23
 Fixed an issue that allowed buttons to be pressed while a map was running.
 Fixed an issue that allowed text to be edited while a map was running.
 
-Version 1.0.10
-4.3.23
-Fixed an issue that allowed buttons to be pressed while a map was running.
-Fixed an issue that allowed text to be edited while a map was running.
+Version 1.0.9
+4.2.23
+Fixed an issue where maps could run and be altered while a dialog was opened.
+Fixed an issue where past versions were displaying the incorrect dates.
+Known Issues: The save and load dialogs are not always on top of the main GUI.
 
 Version 1.0.8 
 3.30.23
