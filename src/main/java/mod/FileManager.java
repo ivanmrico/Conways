@@ -91,10 +91,6 @@ public class FileManager {
             subInd = 0;
             ind++;
         }
-
-
-
-
         reader.close();
         return result;
     }
@@ -218,5 +214,41 @@ public class FileManager {
             }
         }
         return false;
+    }
+    /*
+    public static verifyFirstConwayMap() throws IOP Exception;
+    This method is used to verify whether the first conway map has been created or not.
+     */
+    public static boolean verifyFirstConwayMap() throws IOException {
+        File file = new File("MyFirstConway.cnw");
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            System.out.println("MyFirstConway.cnw located.");
+        }
+        catch(Exception e){
+            System.out.println("MyFirstConway.cnw not found.");
+            return false;
+        }
+        reader.close();
+        return true;
+    }
+
+    /*
+    public static void createFirstConwayMap(int[][] map);
+    This method is used to create the first conway map. It will use the randomly generated Conway map
+    that was created on startup.
+     */
+    public static void createFirstConwayMap(int[][] map){
+        File file = new File("MyFirstConway.cnw");
+        try{
+                FileWriter writer = new FileWriter(file);
+                writer.write(writeFileData(map)); // Write your data here
+                writer.close();
+                System.out.println("MyFirstConway.cnw created.");
+        } catch (Exception e) {
+            // Handle the exception here
+            e.printStackTrace();
+        }
     }
 }

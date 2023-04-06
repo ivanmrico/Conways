@@ -235,8 +235,6 @@ public class WindowController {
         }
     }
 
-
-
     /*
      public void start(ActionEvent event);
      When the start button is pressed changes the button to the stop button and then starts
@@ -392,8 +390,29 @@ public class WindowController {
         rowTxt.setText("53");
         colTxt.setText("61");
         lockDivider();
-        rePopulate();
+        loadMyFirstConway();
         Window.setOnMouseClicked(event -> setImage(event.getX(), event.getY()));
+    }
+
+    /*
+    private void loadMyFirstConway() throws IOException
+    Method to determine whether to create the MyFirstConway.cnw file if it is not found or to
+    load the MyFirstConway.cnw if it is found.
+     */
+    private void loadMyFirstConway() throws IOException {
+        if(!FileManager.verifyFirstConwayMap()){
+            rePopulate();
+            FileManager.createFirstConwayMap(_map);
+        }
+        else{
+            String fileName = "MyFirstConway.cnw";
+            try {
+                _map = FileManager.getFileData(fileName);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            loadMap(_map);
+        }
     }
 
     /*

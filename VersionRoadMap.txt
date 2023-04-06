@@ -45,43 +45,51 @@ Version 1.3
 Massive graphical overhaul
 Added new features for live cell count, row count, col count and the randomize live cell percentage controller.
 
+Version 1.2.2
+Added a feature that will allow the user to choose the Conway Map file to load on startup.
+
 Version 1.2.1
 Added support to use selected cell images on startup.
 
 Version 1.2
 Added the ability to use custom cells.
 
+Version 1.1.3
+Fixed an issue where loading a corrupted .cnw file would crash the program.
+
 Version 1.1.2
 Added a custom application icon for Mac/linux/Windows.
+
+Version 1.1.1
+Improved code structure in regards to the tutorial.
 
 Version 1.1
 Added the intro screen.
 
-Version 1.0.20
-Fixed an issue with GUI elements not ordered correctly. 
-
 Version 1.0.19
-Improved code structure in regards to the tutorial.
-
-Version 1.0.18
-Fixed an issue where generated files on a Mac would appear in a private folder that normal users could not get access to.
-
-Version 1.0.17
-Fixed an issue where the main GUI could be moved on top of save and load dialogs.
-
-Version 1.0.16
-Overhauled Code Comments to include new methods as well as @parameter and @return information.
-
-Version 1.0.15
 Added version support for .cnw files.
 Added a version checker.
 
+Version 1.0.18
+Fixed an issue with GUI elements not ordered correctly. 
+
+Version 1.0.17
+Fixed an issue where generated files on a Mac would appear in a private folder that normal users could not get access to.
+
+Version 1.0.16
+Fixed an issue where the main GUI could be moved on top of save and load dialogs.
+
+Version 1.0.15
+Overhauled Code Comments to include new methods as well as @parameter and @return information.
+
 Version 1.0.14
-Fixed an issue where extra memory would be allocated to a Conway's map within the application. Conway.java
+Fixed an issue where extra memory would be allocated to a Conway's map within the application. 
 
 Version 1.0.13
+4.6.23
 Added a feature that saves your first randomized map when the application loads as "MyFirstConway.cnw".
 This feature will not overwrite MyFirstConway.cnw if it already exists.
+This feature will load MyFirstConway.cnw if it already exists.
 
 Version 1.0.12
 4.5.23
