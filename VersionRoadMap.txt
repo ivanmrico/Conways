@@ -35,6 +35,9 @@ Added online support for downloading maps.
 Version 2.0
 Added online support to connect to a database and upload maps.
 
+Version 1.3.4
+Added a feature for users to be able to use HotKeys to control the various aspects of the program.
+
 Version 1.3.3
 Massive overhaul on comments for code to better reflect the functionality of classes and methods.
 
@@ -66,6 +69,9 @@ Improved code structure in regards to the tutorial.
 Version 1.1
 Added the intro screen.
 
+Version 1.0.20
+Fixed an issue with Windows PCs not loading jar correctly.
+
 Version 1.0.19
 Added version support for .cnw files.
 Added a version checker.
@@ -83,7 +89,9 @@ Version 1.0.15
 Overhauled Code Comments to include new methods as well as @parameter and @return information.
 
 Version 1.0.14
+4.11.23
 Fixed an issue where extra memory would be allocated to a Conway's map within the application. 
+Added some behind the scene version tracking for GitHub.
 
 Version 1.0.13
 4.6.23

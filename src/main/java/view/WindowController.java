@@ -59,6 +59,7 @@ public class WindowController {
     private static final int HORIZONTAL_LABEL_DIFFERENCE = 4;
     private static final double DIVIDER_MAX_WIDTH = 0.86;
     private static final int MAX_ROWS = 53;
+    // Deprecated: This int was used to store the maximum possible cols in a Conway's Map.
     private static final int MAX_COLS = 61;
 
     /*
@@ -421,8 +422,7 @@ public class WindowController {
     dead cells after each cycle according to Conway's rules.
     */
     private void setImage(){
-        Conway obj = new Conway(_map);
-        _map = obj.updateMap();
+        _map = Conway.updateMap(_map);
         cycles.setText("" + (++_cycleCount + _cycleTotal));
         for(int r = 0; r < _lbls.length; r++){
             for(int c = 0; c < _lbls[0].length; c++){

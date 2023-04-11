@@ -1,6 +1,11 @@
 Conway's Game Of Life
 by Ivan M. Rico
-*Version 1.0.13*
+*Version 1.0.14*
+
+Version 1.0.14
+4.11.23
+Fixed an issue where extra memory would be allocated to a Conway's map within the application.
+Added some behind the scene version tracking for GitHub.
 
 Version 1.0.13
 4.6.23
