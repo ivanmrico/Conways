@@ -2,7 +2,9 @@ package mod;
 
 import javafx.scene.control.SplitPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class FileManager {
     This method uses the Java FileChooser class to prompt the user to select a file to load and to return
     the name of that file to be used in conjunction with the getFileData method.
      */
-    public static String getFileName(){
+    public static String getFileName(SplitPane win){
         String fileName = "FAILED";
         // Create a FileChooser instance
         FileChooser fileChooser = new FileChooser();
@@ -30,7 +32,7 @@ public class FileManager {
         fileChooser.getExtensionFilters().add(extFilter);
 
         // Show the file chooser dialog and get the selected file
-        File selectedFile = fileChooser.showOpenDialog(new Stage());
+        File selectedFile = fileChooser.showOpenDialog(win.getScene().getWindow());
 
         if (selectedFile != null) {
             try {
@@ -101,8 +103,8 @@ public class FileManager {
     to choose the directory and name of the .cnw file that will be saved. It returns true or false depending
     on whether or not the file was saved.
      */
-    public static boolean saveMap(int[][] map, SplitPane mainwin) {
-        mainwin.setDisable(true);
+    public static boolean saveMap(int[][] map, SplitPane win) {
+        win.setDisable(true);
         FileChooser fileChooser = new FileChooser();
         File initialDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setInitialDirectory(initialDirectory);
@@ -110,7 +112,7 @@ public class FileManager {
         fileChooser.setInitialFileName(defaultFileName);
         FileChooser.ExtensionFilter txtFilter = new FileChooser.ExtensionFilter("Conway files (*.cnw)", "*.cnw");
         fileChooser.getExtensionFilters().add(txtFilter);
-        File file = fileChooser.showSaveDialog(new Stage());
+        File file = fileChooser.showSaveDialog(win.getScene().getWindow());
         try{
             if (file != null) {
                 // Get the file extension from the selected file name
@@ -130,15 +132,15 @@ public class FileManager {
                 FileWriter writer = new FileWriter(newFile);
                 writer.write(writeFileData(map)); // Write your data here
                 writer.close();
-                mainwin.setDisable(false);
+                win.setDisable(false);
                 return true;
             }
         } catch (Exception e) {
             // Handle the exception here
             e.printStackTrace();
-            mainwin.setDisable(false);
+            win.setDisable(false);
         }
-        mainwin.setDisable(false);
+        win.setDisable(false);
         return false;
     }
 

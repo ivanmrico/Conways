@@ -193,7 +193,7 @@ public class WindowController {
     @FXML
     private void load() throws IOException {
         mainwin.setDisable(true);
-        String fileName = FileManager.getFileName();
+        String fileName = FileManager.getFileName(mainwin);
         try {
             _map = FileManager.getFileData(fileName);
         } catch (IOException e) {
