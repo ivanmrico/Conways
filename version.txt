@@ -1,6 +1,10 @@
 Conway's Game Of Life
 by Ivan M. Rico
-*Version 1.0.15*
+*Version 1.0.16*
+
+Version 1.0.16
+4.16.23
+Added a feature to load an intro map as MyFirstConway if it does not exist.
 
 Version 1.0.15
 4.13.23

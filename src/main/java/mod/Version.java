@@ -13,13 +13,14 @@ public enum Version {
      */
 
     // The HEADER is used to head the file with basic information. Version number needs to be updated.
-    CURRENT_VERSION("*Version 1.0.15*"),
+    CURRENT_VERSION("*Version 1.0.16*"),
     HEADER("Conway's Game Of Life\nby Ivan M. Rico\n" + CURRENT_VERSION.getText() + "\n\n"),
 
     // The SIGNATURE is used in the about section of the application. It does not need to be modified.
     SIGNATURE("Dedicated to my children, family and friends. Thanks for your love and support.\n\nSee the version.txt file in this directory for more information about Version History.\n\n"),
 
     // New version information is added here.
+    VERSION_1_0_16("Version 1.0.16\n" + "4.16.23\n" + "Added a feature to load an intro map as MyFirstConway if it does not exist.\n\n"),
     VERSION_1_0_15("Version 1.0.15\n" + "4.13.23\n" + "Fixed an issue where the main GUI could be moved on top of save and load dialogs.\n\n"),
     VERSION_1_0_14("Version 1.0.14\n" + "4.11.23\n" + "Fixed an issue where extra memory would be allocated to a Conway's map within the application.\n" + "Added some behind the scene version tracking for GitHub.\n\n"),
     VERSION_1_0_13("Version 1.0.13\n" + "4.6.23\n" + "Added a feature that saves your first randomized map when the application loads as \"MyFirstConway.cnw\".\n" + "This feature will not overwrite MyFirstConway.cnw if it already exists.\n" + "This feature will load MyFirstConway.cnw if it already exists.\n\n"),
@@ -39,14 +40,14 @@ public enum Version {
 
 
     // CURRENT_VERSION is used for the VERSION_HISTORY and uses the HEADER and the most recent version.
-    CURRENT_VERSION_INFO(HEADER.getText() +  VERSION_1_0_15.getText()),
+    CURRENT_VERSION_INFO(HEADER.getText() +  VERSION_1_0_16.getText()),
 
     // ABOUT is used in the ABOUT section of the application. It uses the HEADER, SIGNATURE and most recent version.
     ABOUT(CURRENT_VERSION_INFO.getText() + SIGNATURE.getText()),
 
     // VERSION_HISTORY is used to generate the version.txt file when the application loads.
     VERSION_HISTORY(CURRENT_VERSION_INFO.getText()
-            + VERSION_1_0_14 + VERSION_1_0_13.getText() + VERSION_1_0_12.getText()
+            + VERSION_1_0_15.getText() + VERSION_1_0_14 + VERSION_1_0_13.getText() + VERSION_1_0_12.getText()
             + VERSION_1_0_11.getText() + VERSION_1_0_10.getText() + VERSION_1_0_9.getText() + VERSION_1_0_8.getText()
             + VERSION_1_0_7.getText() + VERSION_1_0_6.getText() + VERSION_1_0_5.getText() + VERSION_1_0_4.getText()
             + VERSION_1_0_3.getText() + VERSION_1_0_2.getText() + VERSION_1_0_1.getText() + VERSION_1_0_0.getText());

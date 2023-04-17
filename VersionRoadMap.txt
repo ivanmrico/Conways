@@ -57,6 +57,25 @@ Added support to use selected cell images on startup.
 Version 1.2
 Added the ability to use custom cells.
 
+Version 1.1.9
+Fixed an issue with Windows PCs not loading jar correctly.
+
+Version 1.1.8
+Added version support for .cnw files.
+Added a version checker.
+
+Version 1.1.7
+Fixed an issue with GUI elements not ordered correctly. 
+
+Version 1.1.6
+Fixed an issue where generated files on a Mac would appear in a private folder that normal users could not get access to.
+
+Version 1.1.5
+Overhauled Code Comments to include new methods as well as @parameter and @return information.
+
+Version 1.1.4
+Added a feature to reset the current loaded map.
+
 Version 1.1.3
 Fixed an issue where loading a corrupted .cnw file would crash the program.
 
@@ -69,21 +88,9 @@ Improved code structure in regards to the tutorial.
 Version 1.1
 Added the intro screen.
 
-Version 1.0.20
-Fixed an issue with Windows PCs not loading jar correctly.
-
-Version 1.0.19
-Added version support for .cnw files.
-Added a version checker.
-
-Version 1.0.18
-Fixed an issue with GUI elements not ordered correctly. 
-
-Version 1.0.17
-Fixed an issue where generated files on a Mac would appear in a private folder that normal users could not get access to.
-
 Version 1.0.16
-Overhauled Code Comments to include new methods as well as @parameter and @return information.
+4.16.23
+Added a feature to load an intro map as MyFirstConway if it does not exist.
 
 Version 1.0.15
 4.13.23

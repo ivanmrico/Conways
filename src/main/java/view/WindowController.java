@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import mod.Conway;
 import mod.FileManager;
+import mod.Maps;
 import mod.Version;
 import java.io.*;
 
@@ -98,6 +99,19 @@ public class WindowController {
     @FXML
     private TextField cycText;
 
+    private void intro(){
+        _map = Maps.INTRO_MAP.getMap();
+        for(int r = 0; r < _lbls.length; r++){
+            for(int c = 0; c < _lbls[0].length; c++){
+                if(_map[r][c] == 1){
+                    _lbls[r][c].setGraphic(new ImageView(_cell));
+                }
+                else{
+                    _lbls[r][c].setGraphic(new ImageView(_dead));
+                }
+            }
+        }
+    }
     /*
     private void rePopulate();
     This method is used to repopulate the map to the specified size with random status for each cell when the
@@ -403,6 +417,7 @@ public class WindowController {
     private void loadMyFirstConway() throws IOException {
         if(!FileManager.verifyFirstConwayMap()){
             rePopulate();
+            intro();
             FileManager.createFirstConwayMap(_map);
         }
         else{
